@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="Counter">
+        <h1>REAL-time character counter</h1>
+        <textarea name="text" id="text" oninput="change()" maxlength="51"></textarea>
+        <div class="totalchar">
+            <!-- <div class="total"> -->
+                <h2 class="he">Total character:
+                <p class="totup" >0</p></h2>
+            <!-- </div>
+            <div class="remain"> -->
+                <h2 class="he">Remaining:
+                <p class="remup">50</p></h2>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script>
+        function change(){
+        let sum = document.getElementById("text").value;
+        let totup=document.querySelector(".totup")
+        let remup=document.querySelector(".remup")
+        if(sum.length<51){
+        totup.innerHTML=sum.length;
+        remup.innerHTML=(50-sum.length);}
+        else{
+            alert("Total strings is 50 only!!")
+        }
+    }
+    </script>
+</body>
+</html>
